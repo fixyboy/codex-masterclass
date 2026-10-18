@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: Mastering Codex — withfouad",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Action Red", "tonalRamp": ["oklch(15% .08 29)", "oklch(26% .12 29)", "oklch(38% .16 29)", "oklch(49% .2 29)", "oklch(61% .2 29)", "oklch(72% .14 29)", "oklch(84% .08 29)", "oklch(95% .02 29)"] },
+      "primary-hover": { "role": "primary", "displayName": "Action Red Hover", "tonalRamp": ["oklch(15% .07 29)", "oklch(26% .11 29)", "oklch(38% .16 29)", "oklch(49% .19 29)", "oklch(61% .18 29)", "oklch(72% .13 29)", "oklch(84% .07 29)", "oklch(95% .02 29)"] },
+      "background": { "role": "neutral", "displayName": "Black Ground", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "foreground": { "role": "neutral", "displayName": "White Type", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "muted": { "role": "neutral", "displayName": "Muted White", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] },
+      "rule": { "role": "neutral", "displayName": "Quiet White Rule", "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(49% 0 0)", "oklch(61% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Hero Display", "purpose": "Large sans first line of the hero." },
+      "editorial": { "displayName": "Editorial Serif", "purpose": "Selective italic emphasis, chapter numbers, and summaries." },
+      "body": { "displayName": "Body", "purpose": "Default readable text." },
+      "label": { "displayName": "Action Label", "purpose": "Primary download label." }
+    },
+    "shadows": [{ "name": "download-status", "value": "0 8px 30px rgba(0,0,0,.25)", "purpose": "Separate the temporary download announcement from content." }],
+    "motion": [{ "name": "link-state", "value": ".18s ease", "purpose": "Button background/border and contents arrow transitions; disabled for reduced motion." }],
+    "breakpoints": [{ "name": "chapter-grid", "value": "600px" }, { "name": "desktop-split", "value": "1000px" }]
+  },
+  "components": [
+    {
+      "name": "Primary Download", "kind": "button", "refersTo": "primary-download", "description": "The page's single primary action, repeated at the close.",
+      "html": "<a class=\"ds-download\" href=\"data:text/plain,Mastering%20Codex\" download=\"sample.txt\">Get the cheat sheet <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5\"/></svg></a>",
+      "css": ".ds-download{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-height:54px;padding:15px 21px;background:var(--red,#D10F0F);color:var(--fg,#fff);font:600 15px 'Inter Tight',sans-serif;text-decoration:none;border:1px solid transparent;transition:background .18s ease,border-color .18s ease}.ds-download svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.ds-download:hover{background:#b90d0d;border-color:rgba(255,255,255,.4)}.ds-download:focus-visible{outline:2px solid white;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-download{transition:none}}"
+    },
+    {
+      "name": "Contents Row", "kind": "nav", "description": "Compact navigation with a count and directional cue.",
+      "html": "<a class=\"ds-contents\" href=\"#foundation\"><span>01</span>Foundation<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a>",
+      "css": ".ds-contents{display:flex;align-items:center;gap:18px;min-height:51px;border-bottom:1px solid var(--line,rgba(255,255,255,.17));color:var(--fg,#fff);font:15px 'Inter Tight',sans-serif;text-decoration:none}.ds-contents span{color:var(--muted,rgba(255,255,255,.6));font-size:11px;font-variant-numeric:tabular-nums}.ds-contents svg{margin-left:auto;width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;color:var(--muted,rgba(255,255,255,.6));transition:transform .18s ease}.ds-contents:hover svg{transform:translate(2px,-2px)}.ds-contents:focus-visible{outline:2px solid white;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-contents svg{transition:none}}"
+    },
+    {
+      "name": "Chapter Heading", "kind": "custom", "description": "Serif numbering beside a strong sans chapter title.",
+      "html": "<div class=\"ds-chapter\"><span>01</span><h3>Foundation</h3></div>",
+      "css": ".ds-chapter{display:flex;gap:19px;align-items:baseline;color:var(--fg,#fff)}.ds-chapter span{font:37px/1 'Instrument Serif',serif;color:var(--muted,rgba(255,255,255,.6));font-variant-numeric:lining-nums}.ds-chapter h3{margin:0;font:550 32px/1.08 'Inter Tight',sans-serif;letter-spacing:-.03em}"
+    },
+    {
+      "name": "Text Link", "kind": "nav", "description": "Quiet secondary navigation with an underline on hover.",
+      "html": "<a class=\"ds-text-link\" href=\"#chapters\">Explore the 6 parts <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v16m-6-6 6 6 6-6\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;color:var(--fg,#fff);font:14px 'Inter Tight',sans-serif;text-decoration:none;text-underline-offset:5px}.ds-text-link svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.ds-text-link:hover{text-decoration:underline}.ds-text-link:focus-visible{outline:2px solid white;outline-offset:6px}"
+    },
+    {
+      "name": "withfouad Wordmark", "kind": "nav", "description": "Lowercase type identity and home anchor.",
+      "html": "<a class=\"ds-brand\" href=\"#top\"><span>with</span>fouad<span>.</span></a>",
+      "css": ".ds-brand{color:var(--fg,#fff);font:750 24px/1 'Inter Tight',sans-serif;letter-spacing:-.035em;text-decoration:none}.ds-brand span{font-weight:450}.ds-brand:focus-visible{outline:2px solid white;outline-offset:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Editorial Video Companion",
+    "overview": "Confident, minimal, and useful. Oversized type establishes hierarchy; open space and fine horizontal rules organize dense takeaways. The lowercase withfouad identity, black ground, restrained red, and sans/serif pairing are durable brand commitments.",
+    "keyCharacteristics": ["Strong typography with selective italic serif emphasis.", "Open chapter rows, rather than boxed card grids.", "One clear red download action, repeated at the close."],
+    "rules": [{ "name": "The Single Accent Rule", "body": "Preserve red as the only accent; use it sparingly.", "section": "colors" }],
+    "dos": ["Do preserve the lowercase withfouad identity and single red accent.", "Do use typography, whitespace, and open horizontal rules for hierarchy.", "Do keep serif emphasis selective and keyboard focus visible.", "Do retain stacked mobile layouts and readable fallback fonts."],
+    "donts": ["Don't add generic card grids, gradients, glows, or decorative animation.", "Don't introduce another accent color or make content depend on font loading.", "Don't present placeholder destinations as finished social links."]
+  }
+}
